@@ -1,21 +1,21 @@
-﻿using System;
+﻿using NationalRail.Models.HistoricalServicePerformance;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using Newtonsoft.Json;
-using NationalRail.Models.HistoricalServicePerformance;
+using System.Threading.Tasks;
 
 namespace NationalRail
 {
-    public class NationalRailClient
+    public class HistoricalServicePerformanceClient
     {
         private readonly string _emailAddress;
         private readonly string _password;
         private readonly string _authorization;
 
-        public NationalRailClient(string emailAddress, string password)
+        public HistoricalServicePerformanceClient(string emailAddress, string password)
         {
             _emailAddress = emailAddress;
             _password = password;
