@@ -11,7 +11,7 @@ namespace NationalRailTest
     {
         public static void Main(string[] args)
         {
-            string token = "1c25fca1-5338-4d10-8267-66eadd92c37c";
+            string token = "{TOKEN}";
 
             LiveDepartureBoardClient client = new LiveDepartureBoardClient(token);
 
