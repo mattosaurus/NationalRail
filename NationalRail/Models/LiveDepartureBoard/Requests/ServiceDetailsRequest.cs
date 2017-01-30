@@ -8,25 +8,6 @@ namespace NationalRail.Models.LiveDepartureBoard
 {
     public class ServiceDetailsRequest
     {
-        [XmlRoot(ElementName = "AccessToken", Namespace = "http://thalesgroup.com/RTTI/2013-11-28/Token/types")]
-        public class AccessToken
-        {
-            [XmlElement(ElementName = "TokenValue", Namespace = "http://thalesgroup.com/RTTI/2013-11-28/Token/types")]
-            public string TokenValue { get; set; }
-        }
-
-        [XmlRoot(ElementName = "Header", Namespace = "http://www.w3.org/2003/05/soap-envelope")]
-        public class Header
-        {
-            public Header()
-            {
-                AccessToken = new AccessToken();
-            }
-
-            [XmlElement(ElementName = "AccessToken", Namespace = "http://thalesgroup.com/RTTI/2013-11-28/Token/types")]
-            public AccessToken AccessToken { get; set; }
-        }
-
         [XmlRoot(ElementName = "GetServiceDetailsRequest", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/")]
         public class GetServiceDetailsRequest
         {

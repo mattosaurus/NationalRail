@@ -8,51 +8,16 @@ namespace NationalRail.Models.LiveDepartureBoard
 {
     public class ArrivalDepartureBoardRequest
     {
-        [XmlRoot(ElementName = "AccessToken", Namespace = "http://thalesgroup.com/RTTI/2013-11-28/Token/types")]
-        public class AccessToken
-        {
-            [XmlElement(ElementName = "TokenValue", Namespace = "http://thalesgroup.com/RTTI/2013-11-28/Token/types")]
-            public string TokenValue { get; set; }
-        }
-
-        [XmlRoot(ElementName = "Header", Namespace = "http://www.w3.org/2003/05/soap-envelope")]
-        public class Header
-        {
-            public Header()
-            {
-                AccessToken = new AccessToken();
-            }
-
-            [XmlElement(ElementName = "AccessToken", Namespace = "http://thalesgroup.com/RTTI/2013-11-28/Token/types")]
-            public AccessToken AccessToken { get; set; }
-        }
-
-        [XmlRoot(ElementName = "GetArrivalDepartureBoardRequest", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/")]
-        public class GetArrivalDepartureBoardRequest
-        {
-            [XmlElement(ElementName = "numRows", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/")]
-            public int? NumRows { get; set; }
-
-            [XmlElement(ElementName = "crs", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/")]
-            public string Crs { get; set; }
-
-            [XmlElement(ElementName = "timeOffset", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/")]
-            public int? TimeOffset { get; set; }
-
-            [XmlElement(ElementName = "timeWindow", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/")]
-            public int? TimeWindow { get; set; }
-        }
-
         [XmlRoot(ElementName = "Body", Namespace = "http://www.w3.org/2003/05/soap-envelope")]
         public class Body
         {
             public Body()
             {
-                GetArrivalDepartureBoardRequest = new GetArrivalDepartureBoardRequest();
+                GetArrivalDepartureBoardRequest = new StationBoardRequest();
             }
 
             [XmlElement(ElementName = "GetArrivalDepartureBoardRequest", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/")]
-            public GetArrivalDepartureBoardRequest GetArrivalDepartureBoardRequest { get; set; }
+            public StationBoardRequest GetArrivalDepartureBoardRequest { get; set; }
         }
 
         [XmlRoot(ElementName = "Envelope", Namespace = "http://www.w3.org/2003/05/soap-envelope")]
