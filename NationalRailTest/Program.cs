@@ -15,15 +15,14 @@ namespace NationalRailTest
 
             LiveDepartureBoardClient client = new LiveDepartureBoardClient(token);
 
-            DepartureBoardRequest.Body body = new DepartureBoardRequest.Body();
+            NextDepartureRequest.Body body = new NextDepartureRequest.Body();
 
-            body.GetDepartureBoardRequest.NumRows = 2;
-            body.GetDepartureBoardRequest.Crs = "LDS";
-            body.GetDepartureBoardRequest.FilterType = "to";
-            body.GetDepartureBoardRequest.TimeOffset = 0;
-            body.GetDepartureBoardRequest.TimeWindow = 120;
+            body.GetNextDeparturesRequest.Crs = "LDS";
+            body.GetNextDeparturesRequest.FilterList.Crs.Add("DON");
+            body.GetNextDeparturesRequest.TimeOffset = 0;
+            body.GetNextDeparturesRequest.TimeWindow = 120;
 
-            DepartureBoardResponse.Envelope response = client.GetDepartureBoard(body).Result;
+            NextDepartureResponse.Envelope response = client.GetNextDeparture(body).Result;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Xml.Serialization;
 
 namespace NationalRail.Models.LiveDepartureBoard
 {
-    public class NextDepartureRequest
+    public class FastestDepartureDetailsRequest
     {
         [XmlRoot(ElementName = "AccessToken", Namespace = "http://thalesgroup.com/RTTI/2013-11-28/Token/types")]
         public class AccessToken
@@ -30,14 +30,19 @@ namespace NationalRail.Models.LiveDepartureBoard
         [XmlRoot(ElementName = "filterList", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/")]
         public class FilterList
         {
+            public FilterList()
+            {
+                Crs = new List<string>();
+            }
+
             [XmlElement(ElementName = "crs", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/")]
-            public string Crs { get; set; }
+            public List<string> Crs { get; set; }
         }
 
-        [XmlRoot(ElementName = "GetNextDeparturesRequest", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/")]
-        public class GetNextDeparturesRequest
+        [XmlRoot(ElementName = "GetFastestDeparturesWithDetailsRequest", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/")]
+        public class GetFastestDeparturesWithDetailsRequest
         {
-            public GetNextDeparturesRequest()
+            public GetFastestDeparturesWithDetailsRequest()
             {
                 FilterList = new FilterList();
             }
@@ -60,11 +65,11 @@ namespace NationalRail.Models.LiveDepartureBoard
         {
             public Body()
             {
-                GetNextDeparturesRequest = new GetNextDeparturesRequest();
+                GetFastestDeparturesWithDetailsRequest = new GetFastestDeparturesWithDetailsRequest();
             }
 
-            [XmlElement(ElementName = "GetNextDeparturesRequest", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/")]
-            public GetNextDeparturesRequest GetNextDeparturesRequest { get; set; }
+            [XmlElement(ElementName = "GetFastestDeparturesWithDetailsRequest", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/")]
+            public GetFastestDeparturesWithDetailsRequest GetFastestDeparturesWithDetailsRequest { get; set; }
         }
 
         [XmlRoot(ElementName = "Envelope", Namespace = "http://www.w3.org/2003/05/soap-envelope")]

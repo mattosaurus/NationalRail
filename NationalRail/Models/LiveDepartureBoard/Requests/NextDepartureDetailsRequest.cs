@@ -30,8 +30,13 @@ namespace NationalRail.Models.LiveDepartureBoard
         [XmlRoot(ElementName = "filterList", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/")]
         public class FilterList
         {
+            public FilterList()
+            {
+                Crs = new List<string>();
+            }
+
             [XmlElement(ElementName = "crs", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/")]
-            public string Crs { get; set; }
+            public List<string> Crs { get; set; }
         }
 
         [XmlRoot(ElementName = "GetNextDeparturesWithDetailsRequest", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/")]
