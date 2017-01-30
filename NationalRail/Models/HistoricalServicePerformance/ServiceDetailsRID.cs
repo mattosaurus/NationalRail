@@ -8,6 +8,11 @@ namespace NationalRail.Models.HistoricalServicePerformance
 {
     public class ServiceDetailsRID
     {
+        public ServiceDetailsRID(string _RID)
+        {
+            RID = _RID;
+        }
+
         [JsonProperty("rid")]
         public string RID { get; set; }
     }
