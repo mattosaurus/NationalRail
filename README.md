@@ -1,5 +1,5 @@
 # NationalRail
-A .NET Core wrapper to query the National Rail APIs for historical and live information.
+.NET Core wrapper to query the National Rail APIs for historical and live information.
 
 # Installation
 To use NationalRail in your C# project, you can either download the NationalRail C# .NET libraries directly from the Github repository or, if you have the NuGet package manager installed, you can grab them automatically.
@@ -66,3 +66,6 @@ The below code can be used in a .NET Core project, a test project is also includ
         }
     }
 ```
+
+# References
+A description of the historical service API can be found <a href="http://wiki.openraildata.com/index.php/HSP" alt="historical API description">here</a> and a description of the live API <a href="http://nrodwiki.rockshore.net/index.php/NRE_Darwin_Web_Service_(Public)" alt="live API description">here</a>.
