@@ -44,54 +44,6 @@ namespace NationalRail.Models.LiveDepartureBoard
             public Location Location { get; set; }
         }
 
-        [XmlRoot(ElementName = "callingPoint", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
-        public class CallingPoint
-        {
-            /// <summary>
-            /// The display name of this location.
-            /// </summary>
-            [XmlElement(ElementName = "locationName", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
-            public string LocationName { get; set; }
-
-            /// <summary>
-            /// The CRS code of this location. A CRS code of ??? indicates an error situation where no crs code is known for this location.
-            /// </summary>
-            [XmlElement(ElementName = "crs", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
-            public string Crs { get; set; }
-
-            /// <summary>
-            /// The scheduled time of the service at this location. The time will be either an arrival or departure time, depending on whether it is in the subsequent or previous calling point list.
-            /// </summary>
-            [XmlElement(ElementName = "st", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
-            public string St { get; set; }
-
-            /// <summary>
-            /// The actual time of the service at this location. The time will be either an arrival or departure time, depending on whether it is in the subsequent or previous calling point list. Will only be present if an estimated time (et) is not present.
-            /// </summary>
-            [XmlElement(ElementName = "at", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
-            public string At { get; set; }
-
-            /// <summary>
-            /// The estimated time of the service at this location. The time will be either an arrival or departure time, depending on whether it is in the subsequent or previous calling point list. Will only be present if an actual time (at) is not present.
-            /// </summary>
-            [XmlElement(ElementName = "et", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
-            public string Et { get; set; }
-        }
-
-        [XmlRoot(ElementName = "callingPointList", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
-        public class CallingPointList
-        {
-            [XmlElement(ElementName = "callingPoint", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
-            public List<CallingPoint> CallingPoint { get; set; }
-        }
-
-        [XmlRoot(ElementName = "subsequentCallingPoints", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/types")]
-        public class SubsequentCallingPoints
-        {
-            [XmlElement(ElementName = "callingPointList", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
-            public CallingPointList CallingPointList { get; set; }
-        }
-
         [XmlRoot(ElementName = "service", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/types")]
         public class Service
         {
