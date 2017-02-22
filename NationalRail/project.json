@@ -1,4 +1,6 @@
 {
+  "title": "NationalRail",
+  "description": "A .NET Core wrapper to query the National Rail APIs for historical and live information.",
   "version": "1.0.0-*",
 
   "dependencies": {
@@ -12,5 +14,11 @@
     "netstandard1.6": {
       "imports": "dnxcore50"
     }
+  },
+
+  "scripts": {
+    "postcompile": [
+      "dotnet pack --no-build --configuration %compile:Configuration%"
+    ]
   }
 }
