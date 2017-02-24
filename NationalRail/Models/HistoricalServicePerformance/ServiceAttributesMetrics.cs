@@ -10,12 +10,10 @@ namespace NationalRail.Models.HistoricalServicePerformance
     public class ServiceAttributesMetrics
     {
         [JsonProperty("origin_location")]
-        [JsonConverter(typeof(StringEnumConverter))]
-        public Station OriginLocation { get; set; }
+        public string OriginLocation { get; set; }
 
         [JsonProperty("destination_location")]
-        [JsonConverter(typeof(StringEnumConverter))]
-        public Station DestinationLocation { get; set; }
+        public string DestinationLocation { get; set; }
 
         [JsonProperty("gbtt_ptd")]
         public string DepartureTime { get; set; }

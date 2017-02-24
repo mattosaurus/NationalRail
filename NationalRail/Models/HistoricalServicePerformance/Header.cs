@@ -10,11 +10,9 @@ namespace NationalRail.Models.HistoricalServicePerformance
     public class Header
     {
         [JsonProperty("from_location")]
-        [JsonConverter(typeof(StringEnumConverter))]
-        public Station FromLocation { get; set; }
+        public string FromLocation { get; set; }
 
         [JsonProperty("to_location")]
-        [JsonConverter(typeof(StringEnumConverter))]
-        public Station ToLocation { get; set; }
+        public string ToLocation { get; set; }
     }
 }
