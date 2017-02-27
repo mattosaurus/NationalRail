@@ -32,8 +32,8 @@ The below code can be used in a .NET Core project, a test project is also includ
 
             ServiceMetric metric = new ServiceMetric();
 
-            metric.FromLocation = NationalRail.Models.Station.BTN;
-            metric.ToLocation = NationalRail.Models.Station.VIC;
+            metric.FromLocation = "BTN";
+            metric.ToLocation = "VIC";
             metric.FromTime = "0700";
             metric.ToTime = "0800";
             metric.FromDate = "2016-07-01";
